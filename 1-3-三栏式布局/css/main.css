@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.left,.right,.middle,.wrap{
+    padding: 20px;
+}
+
+.left img,.right img{
+    width: 80px;
+    height: 80px;
+    display: block;
+}
+
+.image{
+    margin-top: 20px;
+}
+
+.wrap{
+    background-color: #eee;
+    border: 1px solid #999;
+    position: relative;
+    min-height: 418px;
+    _height:418px;
+    margin: 20px 20px 0 20px;
+}
+
+.left{
+    background-color: white;
+    width: 160px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+/*左边图片和文字显示在一行，img不用block显示的话会有多余的间隙*/
+.left p,.left img{
+    float: left;
+}
+
+.left p{
+    margin-left: 10px;
+}
+
+.right{
+    background-color: white;
+    width: 80px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.middle{
+    background-color: white;
+    margin-left: 220px;
+    margin-right: 140px;
+}
