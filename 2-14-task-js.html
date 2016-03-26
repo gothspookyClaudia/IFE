@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>城市污染排行榜</h3>
+    <ul id="aqi-list">
+    </ul>
+
+    <script type="text/javascript">
+        var aqiData = [
+            ["北京", 90],
+            ["上海", 50],
+            ["福州", 10],
+            ["广州", 50],
+            ["成都", 90],
+            ["西安", 100]
+        ];
+        (function () {
+
+            var uls = document.getElementById("aqi-list");
+            var array=[];
+            /*
+             在注释下方编写代码
+             遍历读取aqiData中各个城市的数据
+             将空气质量指数大于60的城市显示到aqi-list的列表中
+             */
+
+            for(var i =0; i<aqiData.length; i++  ){
+                if(aqiData[i][1] > 60) {
+                     array.push([aqiData[i][0],aqiData[i][1]]);
+                }
+            }
+           // alert(array);
+            array.sort(function(value1,value2){
+                return value2[1]-value1[1];
+            })
+            for(var j=0; j<array.length; j++){
+                var lis = document.createElement("li");
+                lis.innerHTML ='第'+(j+1)+'名'+array[j][0];
+                uls.appendChild(lis);
+            }
+        })();
+
+    </script>
+</body>
+</html>
