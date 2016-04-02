@@ -12,10 +12,10 @@ window.onload = function(){
     var leftOut = $('leftOut');
     var rightOut = $('rightOut');
     leftIn.addEventListener('click',function(){
-        addLeftElement(leftIn);
+        addLeftElement();
     }),
         rightIn.addEventListener('click', function () {
-            addRightElement(rightIn);
+            addRightElement();
         }),
         leftOut.addEventListener('click',function(){
             for(var i=0; i<oDiv.childNodes.length; i++){
@@ -62,8 +62,7 @@ function addElement(){
     else {
         var oSpan = document.createElement('span');
         oSpan.className = 'spans';
-        oSpan.style.height = value+'px';
-        oSpan.style.backgroundColor = generateColors();
+        oSpan.innerHTML = value;
     }
     return oSpan;
 }
@@ -79,10 +78,4 @@ function addRightElement(){
     var oDiv = $('wrap');
     var oSpan = addElement();
     oDiv.appendChild(oSpan);
-}
-
-function generateColors(){
-    var colors=['#b1b9ff','#ffddf0','#b5a1ff','#9da6bd','#32a39d'];
-    var random = Math.floor(Math.random()*4);
-    return colors[random];
 }
