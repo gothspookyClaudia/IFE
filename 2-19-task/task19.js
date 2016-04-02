@@ -15,10 +15,10 @@ window.onload = function(){
     var sort = $('sort');
     var clear = $('clear');
     leftIn.addEventListener('click',function(){
-        addLeftElement(leftIn);
+        addLeftElement();
     }),
     rightIn.addEventListener('click', function () {
-            addRightElement(rightIn);
+            addRightElement();
         }),
     leftOut.addEventListener('click',function(){
             for(var i=0; i<oDiv.childNodes.length; i++){
