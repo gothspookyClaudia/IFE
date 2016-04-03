@@ -11,10 +11,21 @@ window.onload = function(){
     var rightIn = $('rightIn');
     var leftOut = $('leftOut');
     var rightOut = $('rightOut');
+    var spans = document.getElementsByTagName('span');
+    oDiv.addEventListener('mouseover',function (){
+        for(var i in spans){
+            spans[i].index = i;
+            spans[i].onclick = function () {
+                oDiv.removeChild(oDiv.childNodes[this.index]);
+            }
+        }
+    }),
+    
     leftIn.addEventListener('click',function(){
         addLeftElement();
     }),
-        rightIn.addEventListener('click', function () {
+    
+　　rightIn.addEventListener('click', function () {
             addRightElement();
         }),
         leftOut.addEventListener('click',function(){
@@ -26,7 +37,8 @@ window.onload = function(){
                 }
             }
         }),
-        rightOut.addEventListener('click',function(){
+        
+　　rightOut.addEventListener('click',function(){
             for(var i=oDiv.childNodes.length-1; i>0; i--){
                 if(oDiv.childNodes[i].nodeType === 1){
                     alert(oDiv.childNodes[i]);
@@ -35,7 +47,6 @@ window.onload = function(){
                 }
             }
         })
-
 }
 
 //输入数据
