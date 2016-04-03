@@ -65,6 +65,10 @@ function inputData(){
             alert('输入值为10-100之间');
             return 0;
         }
+         else if(!(/^\d{n}$/).test(value)){
+        alert('不能输入数字以外的字符');
+        return 0;
+     　　}
         else {
             return value;
         }
