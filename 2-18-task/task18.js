@@ -11,44 +11,47 @@ window.onload = function(){
     var rightIn = $('rightIn');
     var leftOut = $('leftOut');
     var rightOut = $('rightOut');
-    var spans = document.getElementsByTagName('span');
-    oDiv.addEventListener('mouseover',function (){
-        for(var i in spans){
-            spans[i].index = i;
-            spans[i].onclick = function () {
-                oDiv.removeChild(oDiv.childNodes[this.index]);
-            }
-        }
-    }),
     
     leftIn.addEventListener('click',function(){
         addLeftElement();
-    }),
+    });
     
 　　rightIn.addEventListener('click', function () {
-            addRightElement();
-        }),
-        leftOut.addEventListener('click',function(){
-            for(var i=0; i<oDiv.childNodes.length; i++){
-                if(oDiv.childNodes[i].nodeType === 1){
-                    alert(oDiv.childNodes[i]);
-                    oDiv.removeChild(oDiv.childNodes[i]);
-                    break;
-                }
-            }
-        }),
+          addRightElement();
+     });
+     
+     leftOut.addEventListener('click',function(){
+      　　 for(var i=0; i<oDiv.childNodes.length; i++){
+               if(oDiv.childNodes[i].nodeType === 1){
+   　               alert(oDiv.childNodes[i]);
+　　               oDiv.removeChild(oDiv.childNodes[i]);
+                   break;
+     　      }
+     　  }
+     });
         
 　　rightOut.addEventListener('click',function(){
-            for(var i=oDiv.childNodes.length-1; i>0; i--){
-                if(oDiv.childNodes[i].nodeType === 1){
-                    alert(oDiv.childNodes[i]);
+　       for(var i=oDiv.childNodes.length-1; i>0; i--){
+              if(oDiv.childNodes[i].nodeType === 1){
+                   alert(oDiv.childNodes[i]);
                     oDiv.removeChild(oDiv.childNodes[i]);
                     break;
                 }
             }
-        })
+        });
+        
+     //点击元素删除
+    function　delElement(){
+        for(var i=0; i<oDiv.childNodes.length; i++) {
+            oDiv.childNodes[i].addEventListener('click',function (i){
+                return function (){
+                    oDiv.removeChild(oDiv.childNodes[i]);
+                }
+            }(i));
+        }
+    }
+    delElement();
 }
-
 //输入数据
 function inputData(){
     var value = $('value').value.trim();
@@ -81,14 +84,13 @@ function addElement(){
     }
     return oSpan;
 }
-
+//左入数据
 function addLeftElement(){
     var oDiv = $('wrap');
     var oSpan = addElement();
     oDiv.insertBefore(oSpan,oDiv.firstChild);
-
 }
-
+//右入数据
 function addRightElement(){
     var oDiv = $('wrap');
     var oSpan = addElement();
