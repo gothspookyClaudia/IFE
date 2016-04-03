@@ -45,7 +45,7 @@ window.onload = function(){
         for(var i=0; i<oDiv.childNodes.length; i++) {
             oDiv.childNodes[i].addEventListener('click',function (i){
                 return function (){
-                    oDiv.removeChild(oDiv.childNodes[i]);
+                    oDiv.removeChild(this);
                 }
             }(i));
         }
