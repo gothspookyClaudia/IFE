@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", yaHei;
+}
+
+table{
+    position: relative;
+    height: 560px;
+    width: 560px;
+    top:50%;
+    left: 50%;
+    margin-left: -280px;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+table td{
+    border: 1px solid #2e78bb;
+    width: 50px;
+    height: 50px;
+}
+
+table td {
+ text-align: center;
+}
+
+table,tr:first-child td,tr td:first-child{
+    border: 0;
+}
+
+.wrap{
+    width: 550px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.button, .button:visited {
+    background-color: #222;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: relative;
+    cursor: pointer
+}
+.activeObj{
+    width: 100%;
+    height: 100%;
+    border-top: 15px solid #ababab;
+    background-color: #938e8c;
+}
